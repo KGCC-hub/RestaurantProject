@@ -28,6 +28,7 @@ namespace RestaurantProject.Controllers
             const string query = @"INSERT INTO Reserva (Nombre, Dia, Hora, Comensales) VALUES (@NameCostumer, @Date, @Time, @NumberOfPeople)";
             try
             {
+                //var stopwatch = Stopwatch.StartNew(); // INICIA MEDICIÓN
                 using var conn = new SqlConnection(connectionString);
                 using var cmd = new SqlCommand(query, conn)
                 {
@@ -39,6 +40,9 @@ namespace RestaurantProject.Controllers
                 cmd.Parameters.AddWithValue("@NumberOfPeople", reserva.NumberOfPeople);
                 conn.Open();
                 cmd.ExecuteNonQuery();
+                //stopwatch.Stop(); // TERMINA MEDICION
+
+                Console.WriteLine($"Tiempo de inserción: {stopwatch.ElapsedMilliseconds} ms");
             }
             catch (SqlException ex)
             {

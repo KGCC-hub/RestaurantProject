@@ -1,0 +1,36 @@
+﻿@model RestaurantProject.Models.Reserva
+
+<h2>Crear Reserva</h2>
+
+<form asp-action="PostReservation" method="post">
+
+    <div class="form-group mb-3">
+        <label asp-for="NameCostumer" class="form-label">Nombre del cliente</label>
+        <input asp-for="NameCostumer" class="form-control" />
+        <span asp-validation-for="NameCostumer" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="Date" class="form-label">Fecha</label>
+        <input asp-for="Date" type="date" class="form-control" />
+        <span asp-validation-for="Date" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="Time" class="form-label">Hora</label>
+        <input asp-for="Time" type="time" class="form-control" />
+        <span asp-validation-for="Time" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="NumberOfPeople" class="form-label">Número de personas</label>
+        <input asp-for="NumberOfPeople" type="number" min="1" class="form-control" />
+        <span asp-validation-for="NumberOfPeople" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Guardar Reserva</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

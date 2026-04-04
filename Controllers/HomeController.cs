@@ -42,7 +42,7 @@ namespace RestaurantProject.Controllers
                 cmd.ExecuteNonQuery();
                 //stopwatch.Stop(); // TERMINA MEDICION
 
-                Console.WriteLine($"Tiempo de inserción: {stopwatch.ElapsedMilliseconds} ms");
+                //Console.WriteLine($"Tiempo de inserción: {stopwatch.ElapsedMilliseconds} ms");
             }
             catch (SqlException ex)
             {

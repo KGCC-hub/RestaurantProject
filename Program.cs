@@ -13,7 +13,8 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-app.UseHttpsRedirection();
+//Desactivate HTTPS redirection for development
+//app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();

@@ -1,10 +1,18 @@
-﻿namespace RestaurantProject.Models
+﻿using System;
+
+namespace RestaurantProject.Models
 {
     public class Reserva
     {
-        public string ?NameCostumer { get; set; }
-        public DateOnly Date { get; set; }
-        public TimeOnly Time { get; set; }
-        public int NumberOfPeople { get; set; }
+        public int Id { get; set; }
+
+        public string Nombre { get; set; }
+
+        public DateTime Dia { get; set; }
+
+        public TimeSpan Hora { get; set; }
+
+        public int Comensales { get; set; }
     }
 }
+

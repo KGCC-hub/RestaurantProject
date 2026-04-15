@@ -1,0 +1,35 @@
+﻿@model List<RestaurantProject.Models.Reserva>
+
+<h2>Reservas</h2>
+
+<form method="post" asp-action="EliminarSeleccionadas">
+    <button class="btn btn-danger mb-2">
+        Eliminar seleccionadas
+    </button>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Nombre</th>
+                <th>Fecha</th>
+                <th>Hora</th>
+                <th>Comensales</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var r in Model)
+            {
+                <tr>
+                    <td>
+                        <input type="checkbox" name="ids" value="@r.Id" />
+                    </td>
+                    <td>@r.Nombre</td>
+                    <td>@r.Dia.ToShortDateString()</td>
+                    <td>@r.Hora</td>
+                    <td>@r.Comensales</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</form>

@@ -5,31 +5,40 @@
 <form asp-action="PostReservation" method="post">
 
     <div class="form-group mb-3">
-        <label asp-for="NameCostumer" class="form-label">Nombre del cliente</label>
-        <input asp-for="NameCostumer" class="form-control" />
-        <span asp-validation-for="NameCostumer" class="text-danger"></span>
+        <label asp-for="Nombre" class="form-label">Nombre del cliente</label>
+        <input asp-for="Nombre" class="form-control" />
+        <span asp-validation-for="Nombre" class="text-danger"></span>
     </div>
 
     <div class="form-group mb-3">
-        <label asp-for="Date" class="form-label">Fecha</label>
-        <input asp-for="Date" type="date" class="form-control" />
-        <span asp-validation-for="Date" class="text-danger"></span>
+        <label asp-for="Dia" class="form-label">Fecha</label>
+        <input asp-for="Dia" type="date" class="form-control" />
+        <span asp-validation-for="Dia" class="text-danger"></span>
     </div>
 
     <div class="form-group mb-3">
-        <label asp-for="Time" class="form-label">Hora</label>
-        <input asp-for="Time" type="time" class="form-control" />
-        <span asp-validation-for="Time" class="text-danger"></span>
+        <label asp-for="Hora" class="form-label">Hora</label>
+        <input asp-for="Hora" type="time" class="form-control" />
+        <span asp-validation-for="Hora" class="text-danger"></span>
     </div>
 
     <div class="form-group mb-3">
-        <label asp-for="NumberOfPeople" class="form-label">Número de personas</label>
-        <input asp-for="NumberOfPeople" type="number" min="1" class="form-control" />
-        <span asp-validation-for="NumberOfPeople" class="text-danger"></span>
+        <label asp-for="Comensales" class="form-label">Número de personas</label>
+        <input asp-for="Comensales" type="number" min="1" class="form-control" />
+        <span asp-validation-for="Comensales" class="text-danger"></span>
     </div>
 
-    <button type="submit" class="btn btn-primary">Guardar Reserva</button>
+    <button type="submit" class="btn btn-primary">
+        Guardar Reserva
+    </button>
 </form>
+
+<hr />
+
+<!-- BOTÓN PARA IR AL LISTADO -->
+<a asp-controller="Home" asp-action="Listado" class="btn btn-success mt-3">
+    Ver reservas
+</a>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
